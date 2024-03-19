@@ -47,4 +47,12 @@ describe("Juego de bolos", () => {
     lanzarVarios(12, 10, tiradas);
     expect(calcularPuntaje(tiradas)).toEqual(300);
   });
+
+  it("debería calcular correctamente el puntaje para un juego con lanzamientos de bonificación", () => {
+    lanzarVarios(18, 0, tiradas);
+    lanzar(5, tiradas);
+    lanzar(5, tiradas);
+    lanzar(3, tiradas);
+    expect(calcularPuntaje(tiradas)).toEqual(13);
+  });
 });

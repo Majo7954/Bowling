@@ -34,4 +34,12 @@ describe("Juego de bolos", () => {
     lanzarVarios(17, 0, tiradas);
     expect(calcularPuntaje(tiradas)).toEqual(16);
   });
+
+  it("debería calcular correctamente el puntaje para un strike", () => {
+    lanzar(10, tiradas);
+    lanzar(3, tiradas);
+    lanzar(4, tiradas);
+    lanzarVarios(16, 0, tiradas);
+    expect(calcularPuntaje(tiradas)).toEqual(24);
+  });
 });

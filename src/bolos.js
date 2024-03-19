@@ -7,7 +7,10 @@ function calcularPuntaje(tiradas) {
     let indiceTirada = 0;
 
     for (let cuadro = 0; cuadro < 10; cuadro++) {
-        if (esSpare(tiradas, indiceTirada)) {
+        if (esStrike(tiradas, indiceTirada)) {
+            puntaje += 10 + tiradas[indiceTirada + 1] + tiradas[indiceTirada + 2];
+            indiceTirada++;
+        } else if (esSpare(tiradas, indiceTirada)) {
             puntaje += 10 + tiradas[indiceTirada + 2];
             indiceTirada += 2;
         } else {
@@ -17,6 +20,10 @@ function calcularPuntaje(tiradas) {
     }
 
     return puntaje;
+}
+
+function esStrike(tiradas, indiceTirada) {
+    return tiradas[indiceTirada] === 10;
 }
 
 function esSpare(tiradas, indiceTirada) {

@@ -22,4 +22,9 @@ describe("Juego de bolos", () => {
     lanzarVarios(20, 1, tiradas);
     expect(calcularPuntaje(tiradas)).toEqual(20);
   });
+
+  it("debería calcular correctamente el puntaje sin spare ni strike", () => {
+    lanzarVarios(20, 3, tiradas);
+    expect(calcularPuntaje(tiradas)).toEqual(60);
+  });
 });

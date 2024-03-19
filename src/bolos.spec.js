@@ -18,4 +18,8 @@ describe("Juego de bolos", () => {
     expect(calcularPuntaje(tiradas)).toEqual(0);
   });
 
+  it("debería calcular correctamente el puntaje para todos los unos", () => {
+    lanzarVarios(20, 1, tiradas);
+    expect(calcularPuntaje(tiradas)).toEqual(20);
+  });
 });

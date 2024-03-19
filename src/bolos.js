@@ -4,6 +4,9 @@ function lanzar(bolos, tiradas) {
 
 function calcularPuntaje(tiradas) {
     let puntaje = 0;
+    for (let tirada of tiradas) {
+        puntaje += tirada;
+    }
     return puntaje;
 }
 

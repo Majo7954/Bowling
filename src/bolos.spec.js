@@ -42,4 +42,9 @@ describe("Juego de bolos", () => {
     lanzarVarios(16, 0, tiradas);
     expect(calcularPuntaje(tiradas)).toEqual(24);
   });
+
+  it("debería calcular correctamente el puntaje para un juego perfecto", () => {
+    lanzarVarios(12, 10, tiradas);
+    expect(calcularPuntaje(tiradas)).toEqual(300);
+  });
 });
